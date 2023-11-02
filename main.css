@@ -1,0 +1,72 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: gainsboro;
+}
+
+.container {
+  width: 480px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+h1 {
+  margin: 30px;
+}
+
+.pig {
+  width: 50%;
+  height: 50vh;
+  margin-top: 6%;
+  position: absolute;
+  border: 2px solid red;
+}
+
+.container .card {
+  width: 100px;
+  height: 100px;
+  border: 2px solid black;
+  cursor: pointer;
+  margin: 10px;
+  border-radius: 12px;
+  background-color: white;
+
+  transform-style: preserve-3d;
+  transform: rotateY(180deg); 
+  transition: all .4s linear;
+  position: relative;
+}
+
+.card.show {
+  transform: rotateY(0deg); 
+}
+
+.container .card .front , .back {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.back {
+  transform: rotateY(180deg); 
+}
+
+.card i {
+  font-size: 30px;
+}
